@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>CI/CD Лабораторная</title>
+    <style>
+        body { font-family: Arial; margin: 50px; }
+        .container { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        input, button { width: 100%; padding: 10px; margin: 10px 0; }
+        button { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        .greeting { margin-top: 20px; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Форма приветствия</h2>
+    <form id="greetingForm">
+        <input type="text" id="username" placeholder="Введите ваше имя">
+        <button type="submit">Отправить</button>
+    </form>
+    <div id="greeting" class="greeting"></div>
+</div>
+<script>
+    document.getElementById('greetingForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('username').value.trim();
+        const greetingDiv = document.getElementById('greeting');
+        if (name === '') {
+            greetingDiv.textContent = 'Пожалуйста, введите имя';
+        } else {
+            greetingDiv.textContent = `Привет, ${name}!`;
+        }
+    });
+</script>
+</body>
+</html>
