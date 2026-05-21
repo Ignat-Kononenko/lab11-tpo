@@ -15,22 +15,22 @@
 <div class="container">
     <h2>Форма приветствия</h2>
     <form id="greetingForm">
-        <input type="text" id="username" placeholder="Введите ваше имя" required>
+        <input type="text" id="username" placeholder="Введите ваше имя">
         <button type="submit">Отправить</button>
     </form>
     <div id="greeting" class="greeting"></div>
 </div>
 <script>
     document.getElementById('greetingForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name = document.getElementById('username').value.trim();
-    const greetingDiv = document.getElementById('greeting');
-    if (name === '') {
-        greetingDiv.textContent = 'Пожалуйста, введите имя';
-    } else {
-        greetingDiv.textContent = `Привет, ${name}!`;
-    }
-});
+        e.preventDefault();
+        const name = document.getElementById('username').value.trim();
+        const greetingDiv = document.getElementById('greeting');
+        if (name === '') {
+            greetingDiv.textContent = 'Пожалуйста, введите имя';
+        } else {
+            greetingDiv.textContent = `Привет, ${name}!`;
+        }
+    });
 </script>
 </body>
 </html>
